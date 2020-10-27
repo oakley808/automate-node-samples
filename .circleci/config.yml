@@ -29,3 +29,12 @@ jobs:
       - setup
       - run: yarn test
       - cleanup
+
+workflows:
+  pr:
+    jobs:
+      - test:
+          filters:
+            branches:
+              only:
+                - /feature\/.*/
